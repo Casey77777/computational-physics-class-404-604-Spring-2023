@@ -1,0 +1,26 @@
+PROGRAMMING PRINCIPLES
+
+	1. gives correct answer
+	2. clear and easy to read code (i.e. it documents itself)
+	3. easy to use
+	4. built up out of small programs 
+	5. easy to modify and robust
+
+	Plan ahead! Use pseudocode if necessary.
+
+PSEUDOCODE
+
+	1. flow chart
+	2. small codes
+	3. put together
+	4. test
+
+EFFICIENT PROGRAM
+
+	Example:
+
+	How to calculate 9^23 efficiently?
+		9 x 9 x 9 x ... x 9 = 9^32  (32 products)
+		or
+		((((9^2)^2)^2)^2)^2 = 9^32  (5 products)
+
