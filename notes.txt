@@ -19,8 +19,18 @@ EFFICIENT PROGRAM
 
 	Example:
 
-	How to calculate 9^23 efficiently?
-		9 x 9 x 9 x ... x 9 = 9^32  (32 products)
-		or
-		((((9^2)^2)^2)^2)^2 = 9^32  (5 products)
+		How to calculate 9^23 efficiently?
+			9 x 9 x 9 x ... x 9 = 9^32  (32 products)
+			or
+			((((9^2)^2)^2)^2)^2 = 9^32  (5 products)
+
+DYNAMIC PROGRAMMING
+
+	Break up a problem into a series of overlapping subproblems. 
+
+	Methods:
+		1. Memorization - catch the output of a function and store it 
+						  if necessary. 
+		2. Tabulation - bottom-up (store all sub-problems)
+
 
