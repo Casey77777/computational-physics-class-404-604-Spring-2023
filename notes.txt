@@ -33,4 +33,42 @@ DYNAMIC PROGRAMMING
 						  if necessary. 
 		2. Tabulation - bottom-up (store all sub-problems)
 
+ABSOLUTE AND RELATIVE ERROR
 
+	y is exact solution
+	y_c is experiment/computer
+	del = |y - y_c| is absolute error
+	del_bar = del / |y| is relative error
+
+	1 = 1 + eps
+	y = y(1 + eps)
+	  = y + y*eps
+	del = |y - y_c|
+	    = |y*eps|
+	del_bar = del / |y|
+	        = eps
+	
+ERROR OF OPERATION
+	
+	Sum:
+
+		a,b,c (positive, exact)
+		a',b',c' (positive, approximation)
+
+		a = b + c
+		b' = b(1 + eps_b)
+		c' = c(1 + eps_c)
+		a' = b' + c' 
+		   = b + c + b*eps_b + c*eps_c
+		   <= b + c + (b + c)*max(eps_b,eps_c)
+		   = a + a*max(eps_b,eps_c)
+
+		del_bar = |a'-a|/a
+				<= max(eps_b,eps_c)
+
+	Difference:
+
+		a = b - c
+		a' = b - c + b*eps_b - c*eps_c
+		   <= b - c + (b + c)*eps_b
+		   = 
