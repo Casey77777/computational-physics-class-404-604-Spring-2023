@@ -70,5 +70,68 @@ ERROR OF OPERATION
 
 		a = b - c
 		a' = b - c + b*eps_b - c*eps_c
-		   <= b - c + (b + c)*eps_b
-		   = 
+		
+		del_bar = |a'-a|/a
+				= |b*eps_b - c*eps_c| / (b-c)
+
+TRUNCATION ERROR
+
+	1. truncating an infinite series with finite series
+
+		Example:
+
+			sin(x) = taylor_expansion_up_to_N_terms + err(x,N)
+
+	2. discretization (e.g. Euler's method with finite steps)
+
+SOLVING EQUATIONS
+
+	Solving equation of the form f(x) = 0.
+
+	1. Bisection
+
+	2. Newton-Raphson method
+
+		guess x0, f(x0) != 0, correction delta_x
+
+		hoping that f(x0 + delta_x) = 0
+
+		f(x0 + delta_x) is approx. f(x0) + f'(x0)delta_x + ... = 0
+
+		Procedure:
+			delta_x = -f(x0) / f'(x0)
+			x0 = x0 + delta_x
+			repeat
+
+		Multiple Equations:
+
+			Example:
+			
+				x1^2 + x1*x2 = 10
+				x2 + 3*x1*x2^2 = 57
+
+				fi(x1,x2,...,xN) = 0, i = 1,...,N
+
+				vec_f(vec_x) = (f1(x1,x2), f2(x1,x2))
+							 = (x1^2 + x1*x2, x2 + 3*x1*x2^2)
+							 = (10, 57)
+
+				guess x1, x2; correction delta_x1, delta_x2
+
+				f1(x1+delta_x1, x2+delta_x2) = 0
+				f2(x1+delta_x1, x2+delta_x2) = 0
+
+				taylor expand
+
+				f1(x1+delta_x1) ~ f1(x1,x2) + del_f1/del_x1*delta_x1 + 
+								  del_f1/del_x2*delta_x2 = 0
+				f2(x1+delta_x1) ~ f2(x1,x2) + del_f2/del_x1*delta_x1 + 
+								  del_f2/del_x2*delta_x2 = 0
+
+				
+
+
+
+
+
+
