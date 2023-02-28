@@ -128,10 +128,38 @@ SOLVING EQUATIONS
 				f2(x1+delta_x1) ~ f2(x1,x2) + del_f2/del_x1*delta_x1 + 
 								  del_f2/del_x2*delta_x2 = 0
 
-				
+ORDINARY DIFFERENTIAL EQUATIONS	
 
+	Convert any order ODE into first order by 
+	redefining the variables
 
+		Example:
+			
+			y'' = xsin(y)
+			
+			becomes the following system of two equations
 
+			w' = xsin(y)
+			w = y'
 
+	ODEs can be written as:
+		F(x,y(x),y'(x),y''(x),...,y^(n)(x)) = 0
+	
+	Explicit form:
+		F(x,y(x),y'(x),y''(x),...,y^(n-1)(x)) = y^(n)(x)
+	
+	Linear ODEs have only single powers of y and its derivatives:
+		a0(x)y + a1(x)y' + a2(x)y'' + ... + an(x)y^(n) = b(x)
+	
+	With numerical methods, ODEs must be first order in explicit form 
+	but not necessarily linear. 
 
+	Euler's Method:
+		
+		dy/dt ~ y(t_(i+1) - t_i) / delta_t
+			  ~ F(t_i,y(t_i))
+
+		so, 
+
+		y(t_(i+1)) = delta_t * F(t_i,y(t_i)) + y(t_i)
 
