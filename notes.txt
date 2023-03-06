@@ -163,3 +163,27 @@ ORDINARY DIFFERENTIAL EQUATIONS
 
 		y(t_(i+1)) = delta_t * F(t_i,y(t_i)) + y(t_i)
 
+BOUNDARY PROBLEMS
+
+	For each first order ODE, there is an initial value condition or 
+	boundary condition (e.g. two second order ODEs have four initial 
+	value/boundary conditions).
+	
+	Boundary conditions can bound two points of the same variable 
+	(e.g. y(0)=a, y(1)=b). 
+
+	Shooting Method:
+		
+		Guess what initial value would achieve the required boundary
+		condition and continually adjust the initial value to 
+		converge onto the boundary condition. 
+
+		With one initial value and one boundary condition, we can
+		use bisection to adjust the initial value. 
+
+		But for more than one initial value and more than one boundary
+		condition, bisection becomes harder to implement. So, we can 
+		use Newton-Raphson method. 
+
+			
+
