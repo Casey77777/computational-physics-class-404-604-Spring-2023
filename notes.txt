@@ -185,5 +185,52 @@ BOUNDARY PROBLEMS
 		condition, bisection becomes harder to implement. So, we can 
 		use Newton-Raphson method. 
 
-			
+PARTIAL DIFFERENTIAL EQUATIONS
 
+	There are three types of PDEs: elliptic, parabolic, and hyperbolic. 
+
+	Heat equation is parabolic. 
+	Poisson equation is elliptic. 
+	Wave equation is hyperbolic. 
+
+	To solve a PDE numerically, we can start by rewritting the 
+	derivatives using their discrete counterparts. 
+
+	For parabolic PDEs or diffusion type problems, we can use the FTCS 
+	scheme. This is a type of explicit method since it uses values 
+	from the past to determine values in the future. 
+
+	Given a PDE and enough boundary conditions, we can use points from 
+	the boundary to determine the next points inward and then use those 
+	points to determine the next points inward etc. until all points 
+	are determined. The shape created from connecting a set of known 
+	points to the point that they will determine is called a STENCIL. 
+
+	The stability condition can be determined by using seperation of 
+	variables and plugging into the numerical equation: 
+	T(x,t) = f(t)*e^(ikx(dx))
+
+	The Crank-Nicolson method is a combination of an explicit and 
+	implicit method as it uses values from the past and the future to 
+	determine the points in between, similar to a central difference 
+	scheme. For the heat equation, this method has no stability 
+	condition. 
+
+	Hyperbolic PDEs:
+
+		An example of a hyperbolic PDE would be 
+			
+			dU/dt+vdU/dx = 0
+
+		and plugging in a solution such as U(x,t) = sin(x-vt)
+		would produce a propagating wave, so the PDE is known as 
+		an ADVECTION equation. 
+
+		For these types of PDEs, the FTCS scheme is always unstable. 
+
+		There are two types of methods that are conditionally stable: 
+
+			1. Lax-Friedrichs method
+			2. Upwind method 
+		
+		Both are stable when the CFL condition is met. 
