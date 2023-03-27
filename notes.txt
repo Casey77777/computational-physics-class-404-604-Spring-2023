@@ -236,3 +236,36 @@ PARTIAL DIFFERENTIAL EQUATIONS
 			2. Upwind method 
 		
 		Both are stable when the CFL condition is met. 
+
+	Elliptic PDEs:
+
+		No initial conditions; boundary value problem at all bounds.
+		
+		There are two types of boundary conditions:
+			1. Dirichlet conditions - value of U at boundary.
+			2. Neumann conditions - derivative of U at boundary.
+
+		For the Poisson equation with x and y, we can use a five 
+		point stencil (shaped like +). The error of this 
+		method is proportional to h^2. We could also use a nine 
+		point stencil (shaped like a box). The error of this method 
+		is proportional to h^4. 
+		
+		Since these stencils won't contain enough known points at the 
+		edges to determine the point at the center, we must do some 
+		linear algebra to simultaneously solve for all the points 
+		within the boundaries. However, the resulting matrix will 
+		typically be too large for computer memory. 
+
+		Some iterative methods for getting around the large matrix 
+		issue are:
+			- Jacobi method
+			- Gauss-Seidel method
+			- succesive over-relaxation (SOR)
+
+		We can also convert the Poisson PDE into a time-evolving
+		diffusion problem by moving all the terms to the LHS of the 
+		equation and setting the RHS to dU/dt that goes to zero as 
+		t goes to infinity. 
+		
+
